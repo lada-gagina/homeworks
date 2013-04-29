@@ -6,20 +6,18 @@ let isprime x =
     let mutable i = 2UL
     while x % i <> 0UL do
         i <- i + 1UL
-    if i = x then true else false
+    i = x
 
 let x = 600851475143UL
 let mutable i = 2UL
 let mutable divx = x
-let mutable max = 0UL
 
 while (divx <> 1UL) do 
-    if (isprime i = true) && (divx % i = 0UL) then divx <- divx / i
-                                                   i <- 2UL
-                                              else i <- i + 1UL
-    if (i > max) then max <- i
+    if (divx % i = 0UL) then divx <- divx / i
+                                       else i <- i + 1UL
 
-printf "%A" max
+
+printf "%A" i
 
     
 
