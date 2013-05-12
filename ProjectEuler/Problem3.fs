@@ -15,7 +15,7 @@ let mutable divx = x
 
 while (divx <> 1UL) do 
     if (divx % i = 0UL) then divx <- divx / i
-                                       else i <- i + 1UL
+                        else i <- i + 1UL
 
 
 printf "%A" i

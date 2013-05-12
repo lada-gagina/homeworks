@@ -8,4 +8,5 @@ let last = 999
 let sum =
     for i in first .. last do
         if i % 3 = 0 || i % 5 = 0 then tempsum <- tempsum + i
+
 printfn "%A" tempsum
