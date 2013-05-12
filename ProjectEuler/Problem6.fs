@@ -1,10 +1,8 @@
-﻿//Problem #6
+﻿//The difference between the sum of the squares of the first one hundred natural numbers and the square of the sum
 //Lada Gagina
 //(c)2013
 
-open System
-let x = seq {for x in [1..100] -> x}
-let y = seq {for x in [1..100] -> x * x}
-let a = Seq.sum x * Seq.sum x
-let b = Seq.sum y
+let n = 100
+let a = Seq.sum {1 .. n} * Seq.sum {1 .. n}
+let b = Seq.sum (seq {for x in [1..n] -> x * x})
 printfn "%A" (a - b)

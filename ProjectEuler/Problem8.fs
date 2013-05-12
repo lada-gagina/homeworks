@@ -1,4 +1,4 @@
-﻿//Problem #8
+﻿//The greatest product of five consecutive digits in the 1000-digit number
 //Lada Gagina
 //(c)2013
 
@@ -22,6 +22,10 @@ let s = "73167176531330624919225119674426574742355349194934\
 84580156166097919133875499200524063689912560717606\
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450"
+
 let v c = int c - int '0'
-let max = Seq.max (seq {for i in 0..995 -> v s.[i] * v s.[i + 1] * v s.[i + 2] * v s.[i + 3] * v s.[i + 4]})
+
+let max = 
+    Seq.max (seq {for i in 0 .. (s.Length - 5) -> v s.[i] * v s.[i + 1] * v s.[i + 2] * v s.[i + 3] * v s.[i + 4]})
+
 printf "%A" max
