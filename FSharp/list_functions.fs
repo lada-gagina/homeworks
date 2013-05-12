@@ -8,24 +8,22 @@ let rec add_to_end list a =
     | hd :: tl -> hd :: add_to_end tl a
 
 let rec append list1 list2 =
-    match list2 with
-    | [] -> list1
-    | hd :: tl -> append (add_to_end list1 hd) tl  
+    match list1 with
+    | [] -> list2
+    | hd :: tl -> hd :: (append tl list2)
 
 let rec reverse list =
     match list with
     | [] -> []
-    | hd :: tl -> add_to_end (reverse tl) hd
+    | hd :: [tl] -> tl :: [hd]
+    | hd :: tl -> append (reverse tl) [hd] 
 
 let rec find predicate list =
     match list with
     | [] -> None
     | hd :: tl -> if (predicate hd) then Some hd else find predicate tl
 
-let rec map op list =
-    match list with
-    | [] -> []
-    | hd :: tl -> ((List.fold (fun acc x -> op x) 0 [hd]) :: map op tl)
+let map op list = List.fold (fun acc x -> append acc [op x]) [] list
 
 //tests
 
@@ -51,4 +49,4 @@ let map_test =
     (map (fun x -> x * x) [] = [])&&
     (map (fun x -> x + 4) [1;3;5] = [5;7;9])
 
-printf "%A" (add_to_end_test, append_test, reverse_test, find_test, map_test)
+printfn "%A" (add_to_end_test, append_test, reverse_test, find_test, map_test)
