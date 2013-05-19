@@ -33,22 +33,47 @@ let rec delete tree a =
                                           else if (a > x) then Node (left, x, delete right a) 
                                           else stick left right
 
+let print_sticks n =
+    for i in 1 .. n do
+    printf "|    "
+
+let mutable far = 0
+let rec print tree =
+    match tree with
+    | Null -> printfn "\b"
+    | Leaf x -> printfn "%d" x
+    | Node (left, x, right) -> printf "%d —— " x
+                               far <- far + 1
+                               print right
+                               print_sticks far                               
+                               printf "\n"
+                               print_sticks (far - 1)
+                               far <- 0
+                               print left
+
 //tests
 
 let test_tree = Node (Node (Leaf 3, 5, Leaf 9), 10, Node (Leaf 11, 13, Leaf 15))
 print test_tree
-let test_add_tree = Node (Node (Null, 5, Leaf 9), 10, Leaf 13)
-let test_delete_tree = Node (Null, 10, Leaf 15)
+let test_add_tree = Node (Node (Node (Null, 3, Leaf 4), 5, Leaf 9), 10, Node (Leaf 11, 13, Leaf 15))
+let test_delete_tree = Node (Node (Null, 3, Leaf 9), 10, Node (Leaf 11, 13, Leaf 15))
 
 let add_to_tree_test =
-    (add_to_tree test_tree 9 = test_add_tree)
+    (add_to_tree test_tree 4 = test_add_tree)
 
 let exist_test =
-    (exist test_tree 9 = false)&&
+    (exist test_tree 4 = false)&&
     (exist test_tree 10 = true)
 
 let delete_test =
-    (delete test_tree 9 = test_tree)&&
+    (delete test_tree 4 = test_tree)&&
     (delete test_tree 5 = test_delete_tree)
 
-printfn "%A" (add_to_tree_test, exist_test, delete_test)
+printfn "%A" (add_to_tree_test, exist_test, delete_test)    
+
+(*let rec depth tree =
+    let mutable acc = 0
+    match tree with 
+    | Null -> 0
+    | Leaf _ -> acc + 1
+    | Node (left, _, right) -> acc + 1 + max (depth left: int) (depth right: int) *)
