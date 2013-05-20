@@ -1,4 +1,4 @@
-﻿//binary tree
+//binary tree
 //Lada Gagina
 //(c)2013
 
@@ -7,11 +7,11 @@ type binary_tree<'a> =
     | Leaf of 'a
     | Node of (binary_tree<'a> * 'a * binary_tree<'a>)
 
-let rec add_to_tree tree a = 
+let rec add_to_tree a tree = 
     match tree with
     | Null -> Node (Null, a, Null)
     | Leaf x -> if (a < x) then Node (Leaf a, x, Null) else Node (Null, x, Leaf a)
-    | Node (left, x, right) -> if (a < x) then Node ((add_to_tree left a), x, right) else Node (left, x, (add_to_tree right a))
+    | Node (left, x, right) -> if (a < x) then Node ((add_to_tree a left), x, right) else Node (left, x, (add_to_tree a right))
 
 let rec exist tree a =
     match tree with
@@ -33,12 +33,14 @@ let rec delete tree a =
                                           else if (a > x) then Node (left, x, delete right a) 
                                           else stick left right
 
-let print_sticks n =
-    for i in 1 .. n do
-    printf "|    "
 
 let mutable far = 0
 let rec print tree =
+    
+    let print_sticks n =
+        for i in 1 .. n do
+        printf "|    "
+
     match tree with
     | Null -> printfn "\b"
     | Leaf x -> printfn "%d" x
@@ -53,13 +55,19 @@ let rec print tree =
 
 //tests
 
-let test_tree = Node (Node (Leaf 3, 5, Leaf 9), 10, Node (Leaf 11, 13, Leaf 15))
+let test_tree = Node (Node (Leaf 3, 5, Leaf 9), 1000, Node (Leaf 11, 13, Leaf 15))
 print test_tree
 let test_add_tree = Node (Node (Node (Null, 3, Leaf 4), 5, Leaf 9), 10, Node (Leaf 11, 13, Leaf 15))
 let test_delete_tree = Node (Node (Null, 3, Leaf 9), 10, Node (Leaf 11, 13, Leaf 15))
 
+let tree =
+  Null
+  |> add_to_tree 5
+  |> add_to_tree 8
+  |> add_to_tree 1
+
 let add_to_tree_test =
-    (add_to_tree test_tree 4 = test_add_tree)
+    (add_to_tree 4 test_tree = test_add_tree)
 
 let exist_test =
     (exist test_tree 4 = false)&&
@@ -70,6 +78,7 @@ let delete_test =
     (delete test_tree 5 = test_delete_tree)
 
 printfn "%A" (add_to_tree_test, exist_test, delete_test)    
+    
 
 (*let rec depth tree =
     let mutable acc = 0
