@@ -14,7 +14,7 @@ let Sieve_of_Eratosthenes =
     let sieve = [|for i in 0L .. n -> true|]
     sieve.[1] <- false
     for i in 2L .. int64 (sqrt (float n) + 1.0) do
-        if (isprime i) then
+        if (sieve.[i]) then
             for j in i * i .. i .. n do
                 sieve.[int j] <- false
     sieve

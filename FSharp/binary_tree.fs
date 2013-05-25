@@ -1,4 +1,4 @@
-﻿//binary tree
+//binary tree
 //Lada Gagina
 //(c)2013
 
