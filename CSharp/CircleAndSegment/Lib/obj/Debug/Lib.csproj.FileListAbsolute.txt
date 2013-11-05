@@ -1,0 +1,5 @@
+c:\users\лада\documents\visual studio 2012\Projects\WindowsFormsApplication1\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+c:\users\лада\documents\visual studio 2012\Projects\WindowsFormsApplication1\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+c:\users\лада\documents\visual studio 2012\Projects\WindowsFormsApplication1\ClassLibrary1\obj\Debug\Lib.csprojResolveAssemblyReference.cache
+c:\users\лада\documents\visual studio 2012\Projects\WindowsFormsApplication1\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+c:\users\лада\documents\visual studio 2012\Projects\WindowsFormsApplication1\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
