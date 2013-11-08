@@ -1,9 +1,0 @@
-c:\users\лада\documents\visual studio 2012\Projects\CloudTest\CloudTest\bin\Debug\CloudTest.exe.config
-c:\users\лада\documents\visual studio 2012\Projects\CloudTest\CloudTest\bin\Debug\CloudTest.XML
-c:\users\лада\documents\visual studio 2012\Projects\CloudTest\CloudTest\bin\Debug\CloudTest.exe
-c:\users\лада\documents\visual studio 2012\Projects\CloudTest\CloudTest\bin\Debug\CloudTest.pdb
-c:\users\лада\documents\visual studio 2012\Projects\CloudTest\CloudTest\bin\Debug\FSharp.Core.dll
-c:\users\лада\documents\visual studio 2012\Projects\CloudTest\CloudTest\bin\Debug\FSharp.Core.xml
-c:\users\лада\documents\visual studio 2012\Projects\CloudTest\CloudTest\obj\Debug\CloudTest.fsprojResolveAssemblyReference.cache
-c:\users\лада\documents\visual studio 2012\Projects\CloudTest\CloudTest\obj\Debug\CloudTest.exe
-c:\users\лада\documents\visual studio 2012\Projects\CloudTest\CloudTest\obj\Debug\CloudTest.pdb
