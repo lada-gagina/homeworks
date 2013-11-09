@@ -94,4 +94,5 @@ type Test() =
     member x.``1``() = 
         let factory = new Factory(Midday, 0, false)
         let cloud = new Cloud(factory)
-        cloud.Create() |> should equal CreatureType.Hedgehog
+        let creature = cloud.Create()
+        creature.CreatureType |> should equal CreatureType.Hedgehog
