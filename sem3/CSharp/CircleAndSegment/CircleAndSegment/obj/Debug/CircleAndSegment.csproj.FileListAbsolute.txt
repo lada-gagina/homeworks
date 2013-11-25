@@ -9,9 +9,3 @@ c:\users\лада\documents\visual studio 2012\Projects\WindowsFormsApplication1
 c:\users\лада\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 c:\users\лада\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 C:\Users\Лада\Documents\Visual Studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\CircleAndSegment.Shell.resources
-C:\Users\Лада\homeworks\CSharp\CircleAndSegment\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Лада\homeworks\CSharp\CircleAndSegment\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Лада\homeworks\CSharp\CircleAndSegment\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Лада\homeworks\CSharp\CircleAndSegment\CircleAndSegment\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Лада\homeworks\CSharp\CircleAndSegment\CircleAndSegment\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Лада\homeworks\CSharp\CircleAndSegment\CircleAndSegment\obj\Debug\WindowsFormsApplication1.pdb
