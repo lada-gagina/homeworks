@@ -3,14 +3,12 @@ open NUnit.Framework
 open FsUnit
 open System.Text.RegularExpressions
 
+let login = "^[a-zA-Z_][a-zA-Z0-9_-]*(\.?[a-zA-Z_0-9]+)*" // '.' may be in the middle, but may not be the first or the last symbol of the name
+let domains = "([a-z]+\.)+"
+let tld = "(name|info|yandex|museum|[a-zA-Z]{2,3})$"
+let RegExpr = new Regex(login + "@" + domains + tld)
 
-let iscorrect address = 
-    let login = "^[a-zA-Z_][a-zA-Z0-9_-]*(\.?[a-zA-Z_0-9]+)*" // '.' may be in the middle, but may not be the first or the last symbol of the name
-    let domains = "([a-z]+\.)+"
-    let tld = "(name|info|yandex|museum|[a-zA-Z]{2,3})$"
-    let RegExpr = new Regex(login + "@" + domains + tld)
-    
-    RegExpr.IsMatch (address)
+let iscorrect address = RegExpr.IsMatch(address)
 
 [<TestFixture>]
 type ``Right`` ()=
