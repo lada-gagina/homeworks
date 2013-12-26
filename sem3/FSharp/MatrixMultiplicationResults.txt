@@ -1,0 +1,11 @@
+﻿Multiplication of two matrices 1000x1000:
+
+Number of streams              Time
+
+1                             00:02:55.6395524
+
+2                             00:01:52.8332708
+
+4                             00:01:57.8287243
+
+8                             00:02:01.6608169
