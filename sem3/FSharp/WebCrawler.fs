@@ -75,9 +75,10 @@ let webCrawler link =
                 |> ignore
 
             with _ -> ()
-        }
-
-    crawler link |> Async.RunSynchronously
+        }    
+    match host with
+    | "" -> printfn "Incorrect link! The link should begin with \"http(s)://\"\n"
+    | _  -> crawler link |> Async.RunSynchronously 
     
 [<EntryPoint>]
 let main argv =
