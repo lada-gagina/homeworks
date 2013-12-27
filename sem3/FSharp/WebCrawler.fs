@@ -53,7 +53,8 @@ let downloadPic link =
     }
 
 let webCrawler link =
-    let host = hostRegex.Match(link).Value
+    let host = try hostRegex.Match(link).Value
+               with _ -> ""
     let rec crawler link =
         async {
             try attendedLinks.GetOrAdd(link, ())
